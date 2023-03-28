@@ -125,3 +125,104 @@ JavaScript detect dynamic scroll it doesn't matter if the container adding new e
 </body>
 </html>
 ```
+
+USING Intersection_Observer_API JS
+
+```HTML
+<html><head><style>
+  #elemTargeta,
+  #elemTargetb,
+  #elemTargetc,
+  #elemTargetd,
+  #elemTargete,
+  #elemTargetf,
+  #elemTargetg {
+    width: 100%;
+    height: 300px;  
+  }
+  
+  #elemTargeta,
+  #elemTargetc,
+  #elemTargete, 
+  #elemTargetg {
+    background-color: red;     
+  }
+  
+  #elemTargetb,
+  #elemTargetd,
+  #elemTargetf {
+    background-color: rgb(255, 187, 0);     
+  }
+  
+  </style></head>
+  
+  <body id="app-id">
+  
+  <div id="elemTargeta" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  
+  <div id="elemTargetb" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  
+  
+  <div id="elemTargetc" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  <div id="elemTargetd" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  
+  <div id="elemTargete" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  
+  
+  <div id="elemTargetf" class="cons">
+    <p>Demo Content...</p>
+  </div>
+  
+  
+  <div id="elemTargetg">
+    <p>Demo Content...</p>
+  </div>
+  
+  <script id="app-data">
+    
+    // Ref.: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+    const allElem = document.querySelectorAll('.cons');
+  
+    const revealed = function(e,o) {
+  
+      const [entry] = e;
+      console.log(entry);
+      /* do something */
+      // ex. if( !entry.isIntersect) { return ... do something! }
+      // Which means if intersect is false;
+  
+    }
+   
+    // threshold: 0.0 to 1.0 stand for percentage that intersect to the element
+    // ex. 1.0 means 100% as long as the detector are within 100% or 1.0 it will intersect
+    // to the target element
+    // @method revealed is a callback function
+    const sectionObserver = new IntersectionObserver(
+      revealed, {
+        root: null,
+        threshold: 1.0,
+      }
+    );
+    
+    // loop if you want to check to intersect more than 1 element
+    allElem.forEach(function(v, index) { sectionObserver.observe(v); });
+  
+  
+    window.onbeforeunload = function () {
+       window.scrollTo(0, 0);
+    }
+    
+   </script>
+  
+  </body></html>
+```

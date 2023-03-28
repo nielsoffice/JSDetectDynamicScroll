@@ -115,6 +115,11 @@ JavaScript detect dynamic scroll it doesn't matter if the container adding new e
         toBePurple.style.backgroundColor = 'yellow';
       }
     };
+    
+    // Default Refresh scroll back to top!
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    }
   
  </script>
 </body>

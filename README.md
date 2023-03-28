@@ -105,7 +105,7 @@ JavaScript detect dynamic scroll it doesn't matter if the container adding new e
     onscroll = (event) => {
       
       // check the value of current Y base on detector if
-      // greater that or equalt to target elements that source of triggered!
+      // greater that or equal to target elements that source of triggered!
       // Then if true ?! do set the target Element that wants to be Manipulate!
       if( window.pageYOffset >=  _targetID.bottom ) 
       { toBePurple.style.backgroundColor = 'purple'; } 

@@ -214,9 +214,10 @@ USING Intersection_Observer_API JS
       }
     );
     
+    // Then isIntersect return FALSE as the recent element not detected as the new element html tag dectected it will return TRUE for isIntersect from "0" base !
+    
     // loop if you want to check to intersect more than 1 element
     allElem.forEach(function(v, index) { sectionObserver.observe(v); });
-  
   
     window.onbeforeunload = function () {
        window.scrollTo(0, 0);

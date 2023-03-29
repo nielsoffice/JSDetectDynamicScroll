@@ -130,7 +130,8 @@ JavaScript detect dynamic scroll it doesn't matter if the container adding new e
 <br />In addition, Keep in mind Any element that not yet showed in document screen or viewport from the bottom through scrolling down the new element or html tag will detect with this approach, While any element that will hide to top through scrolling down will detect with "getBoundingClientRect()" method.
 <br />
 <br />Intersect while hiding the content : getBoundingClientRect() | scrolling down
-<br />Intersect while showing the content from bottom : Intersection_Observer_API | scrolling down
+<br />Intersect while showing the content from bottom : Intersection_Observer_API | scrolling down < true >
+<br />AND Intersect when the content is hidden or detector getting out to element from the top which already hidden! : Intersection_Observer_API | scrolling down < false >
 
 ```HTML
 <html><head><style>

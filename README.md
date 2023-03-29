@@ -210,7 +210,7 @@ USING Intersection_Observer_API JS
     const sectionObserver = new IntersectionObserver(
       revealed, {
         root: null,
-        threshold: 1.0,
+        threshold: 0, // 0 means 0% detect each element as long as detector detected it then out!.
       }
     );
     
